@@ -1,0 +1,86 @@
+# Python/cache
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.pytest_cache/
+
+# Virtual environments
+.venv/
+.venv_fig/
+venv/
+env/
+
+# Local agent/tooling state
+.remote_patch/
+.tools/
+temp_pyshim/
+tmp_skill_repo/
+tmp/
+_figure_review/
+
+# Data, model weights, experiments, generated outputs
+datasets/dataset_prepare/
+datasets/DeepSea-MOT/
+datasets/DeepSea-MOT_hf/
+datasets/YoutubeFish-release/
+exp/
+outputs/
+results/
+deliverables/
+server_backup/
+server_logs/
+server_vis/
+tmp_probe/
+upload_packages/
+DeepFish_YOLOv8_Project/
+FishVideoCount_Project/
+ei_conference_paper/
+ei_conference_paper_v2/
+external/
+codex_skills/
+
+# Paper/export artifacts
+figures/
+figure_assets/
+paper_figures/
+journal_work/
+paper/
+pdf_pages_shared_branch/
+_cn_fig_preview/
+_cn_fig_preview_highres/
+_pdf_review/
+_r1_preview/
+
+# Large/binary archives and model artifacts
+*.pth
+*.pt
+*.onnx
+*.ckpt
+*.zip
+*.tgz
+*.tar
+*.tar.gz
+*.rar
+*.7z
+*.docx
+*.pptx
+*.pdf
+*.png
+*.jpg
+*.jpeg
+*.bmp
+*.tif
+*.tiff
+*.svg
+
+# Logs and temporary files
+*.log
+*.tmp
+*.bak
+*.backup
+ziI3Zp63
+Miniforge3.sh
+conversation_handoff_*.md
+pdf_extracted_*.txt
+pdf_shared_branch_text.txt
+.idea/
