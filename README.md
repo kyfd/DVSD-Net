@@ -4,7 +4,42 @@ PyTorch code for DVSD-Net: underwater fish counting with dual-view shared-densit
 
 Each annotated image is turned into a pair of pseudo-views. The network learns the full visible density map, plus an auxiliary shared-visible branch so the two views stay consistent.
 
-This repo is the training and eval code for the paper. Datasets, checkpoints, and generated figures are not included.
+This repo is the training and eval code for the paper. Datasets, checkpoints, and generated figures are **not included**. The diagram below is the `full` profile as implemented in `model/VIC.py`, not a rendered experiment figure.
+
+```text
+          paired pseudo-views
+                    |
+                    v
+         UPhy-inspired enhancer
+                    |
+                    v
+              VGG16-FPN
+                    |
+                    v
+         DCFA cross-attention
+           (3 stages x 2 blocks)
+                    |
+                    v
+            feature fusion
+                    |
+                    v
+        deformable refine (DGRM)
+                    |
+           +--------+--------+
+           |                 |
+           v                 v
+   global density      shared-visible
+      decoder             decoder
+```
+
+What a reviewer should look at after training (not shipped here):
+
+1. Input underwater image
+2. Ground-truth density map from point annotations
+3. Predicted density map
+4. A typical success case and a failure case (heavy occlusion, turbidity, or missed small fish)
+
+Do not treat this README as a results table. Report test MAE / RMSE / GAME from `tools/eval_metrics.py` on the official DeepFish loc split.
 
 ## Layout
 
